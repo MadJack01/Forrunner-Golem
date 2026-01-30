@@ -19,9 +19,8 @@ public class BossHealthHud extends CustomUIHud {
 
     @Override
     protected void build(@Nonnull UICommandBuilder builder) {
-        playerRef.sendMessage(Message.raw("Boss UI TEST"));
         builder.append("bosshealth.ui");
-        //builder.set("#BossName.Text", bossName);
-        //builder.set("#BossHealthBar.Value", String.format("%d", 1));
+        builder.set("#BossName.Text", bossName);
+        builder.set("#BossHealthBar.Value", 0.30d) ;
     }
 }

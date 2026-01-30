@@ -31,23 +31,22 @@ public class BossUiTestCommand extends AbstractPlayerCommand {
         String bossName = "Golem test name";
 
         // Show event title
-        EventTitleUtil.showEventTitleToPlayer(playerRef,
-                Message.raw("BOSS FIGHT"), Message.raw(bossName),
-                true, "ui/icons/skull.png", 3.0f, 0.5f, 0.5f);
 
-        // Show notification
-        NotificationUtil.sendNotification(
-                playerRef.getPacketHandler(),
-                Message.raw("A powerful enemy approaches!"),
-                NotificationStyle.Danger);
 
         CompletableFuture.runAsync(()-> {
             if (!(hudManager.getCustomHud() instanceof BossHealthHud)) {
                 hudManager.setCustomHud(playerRef, new BossHealthHud(playerRef, bossName));
-                playerRef.sendMessage(Message.raw("Boss Health Shown"));
+                EventTitleUtil.showEventTitleToPlayer(playerRef,
+                        Message.raw("BOSS FIGHT"), Message.raw(bossName),
+                        true, "ui/icons/skull.png", 3.0f, 0.5f, 0.5f);
+
+                // Show notification
+                NotificationUtil.sendNotification(
+                        playerRef.getPacketHandler(),
+                        Message.raw("A powerful enemy approaches!"),
+                        NotificationStyle.Danger);
             } else {
                 if (hudManager != null) {
-                    playerRef.sendMessage(Message.raw("Boss Health Hidden"));
                     hudManager.setCustomHud(playerRef, new EmptyHudUI(playerRef));
                 }
             }
