@@ -1,0 +1,16 @@
+Group {
+  LayoutMode: Top;
+  Anchor: (Width: 800, Height: 500);
+  Group #Groupf0775370 {
+    LayoutMode: Middle;
+    Label #BossName {
+      Anchor: (Left: 250, Right: 250, Horizontal: 0);
+      Text: "Nom Boss";
+      Style: (Alignment: Center, TextColor: #ffffff, HorizontalAlignment: Center);
+    }
+  }
+  ProgressBar #BossHealthBar {
+    Anchor: (Left: 150, Right: 150, Top: 0);
+    Value: 0.5;
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "Group" : "com.light06",
+  "Name" : "Forerunner Golem",
+  "Version" : "1.0.0",
+  "Main" : "com.light06.plugin.ForerunnerGolem.ForerunnerGolemPlugin",
+  "IncludesAssetPack" : true
+}
