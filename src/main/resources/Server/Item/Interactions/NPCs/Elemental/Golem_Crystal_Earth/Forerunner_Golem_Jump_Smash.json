@@ -1,0 +1,72 @@
+{
+  "Type": "Simple",
+  "Effects": {
+    "ItemPlayerAnimationsId": "Forerunner_Golem_Default",
+    "ItemAnimationId": "JumpFar"
+  },
+  "$Comment": "Prepare Delay",
+  "RunTime": 0.1,
+  "Next": {
+    "Type": "Parallel",
+    "$Comment": "Make sure this parallel interaction is needed and can't be optimized away",
+    "Interactions": [
+      {
+        "Interactions": [
+          {
+            "Type": "Selector",
+            "$Comment": "Length of Combat",
+            "RunTime": 0.05,
+            "Selector": {
+              "Id": "AOECylinder",
+              "Range": 20,
+              "Offset": {
+                "Y": -1
+              },
+              "Height": 2.5
+            },
+            "HitEntity": {
+              "Interactions": [
+                {
+                  "Type": "Replace",
+                  "DefaultValue": {
+                    "Interactions": [
+                      "Forerunner_Golem_NPC_Jump_Smash_Damage",
+                      {}
+                    ]
+                  },
+                  "Var": ""
+                }
+              ]
+            },
+            "Next": {
+              "Type": "Simple",
+              "$Comment": "Pad the interaction length",
+              "RunTime": 0.1
+            }
+          }
+        ]
+      },
+      {
+        "Interactions": [
+          {
+            "Type": "Simple",
+            "$Comment": "Length of Effect",
+            "RunTime": 0.183,
+            "Effects": {
+              "WorldSoundEventId": "SFX_Golem_Earth_Stomp_Impact",
+              "Particles": [
+                {
+                  "SystemId": "Forerunner_Golem_Smash_Effect",
+                  "PositionOffset": {
+                    "Y": 1
+                  },
+                  "TargetEntityPart": "Entity"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "Forerunner_Golem_Slam_Circle",
+      "PositionOffset": {
+        "Y": -0.7
+      },
+      "FixedRotation": false,
+      "InitialVelocity": {
+        "Yaw": {
+          "Min": 0,
+          "Max": 0
+        },
+        "Pitch": {
+          "Min": 0,
+          "Max": 0
+        },
+        "Speed": {
+          "Min": 0,
+          "Max": 0
+        }
+      },
+      "EmitOffset": {
+        "X": {
+          "Min": 0
+        }
+      }
+    },
+    {
+      "SpawnerId": "Explosion_Fail_Smoke_Main"
+    }
+  ],
+  "BoundingRadius": 100.0,
+  "CullDistance": 100.0,
+  "IsImportant": false
+}

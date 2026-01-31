@@ -1,0 +1,55 @@
+{
+  "TranslationProperties": {
+    "Name": "Yellow_Light"
+  },
+  "Icon": "Icons/ItemsGenerated/Yellowblock_Light.png",
+  "Categories": [
+    "Blocks.Rocks",
+    "Blocks.Rocks"
+  ],
+  "PlayerAnimationsId": "Block",
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Cube",
+    "Opacity": "Semitransparent",
+    "Group": "Stone",
+    "Flags": {},
+    "Textures": [
+      {
+        "Sides": "BlockTextures/Clay_Smooth_Yellow.png",
+        "UpDown": "BlockTextures/Clay_Smooth_Yellow.png",
+        "Weight": 1
+      }
+    ],
+    "CubeShadingMode": "Fullbright",
+    "Light": {
+      "Color": "#f80",
+      "Radius": 10
+    }
+  },
+  "Tags": {
+    "Type": [
+      "Rock"
+    ],
+    "Family": [
+      "Crystal"
+    ]
+  },
+  "IconProperties": {
+    "Scale": 0.58823,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -13.5
+    ]
+  },
+  "ItemSoundSetId": "ISS_Blocks_Stone",
+  "Light": {
+    "Radius": 10,
+    "Color": "#fa0"
+  }
+}
