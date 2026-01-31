@@ -1,8 +1,8 @@
 {
   "Model": "NPC/Boss/Forerunner Golem/Forerunner_Golem_Model.blockymodel",
   "Texture": "NPC/Boss/Forerunner Golem/Forerunner_Golem_Texture.png",
-  "MinScale": 2.4,
-  "MaxScale": 2.4,
+  "MinScale": 2.35,
+  "MaxScale": 2.35,
   "EyeHeight": 2,
   "CrouchOffset": -0.35,
   "HitBox": {

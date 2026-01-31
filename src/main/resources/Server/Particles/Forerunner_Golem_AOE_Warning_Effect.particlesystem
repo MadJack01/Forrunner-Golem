@@ -1,0 +1,33 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "Example_Sphere_SparkfallSparks",
+      "PositionOffset": {
+        "Y": 0
+      },
+      "FixedRotation": false,
+      "InitialVelocity": {
+        "Yaw": {
+          "Min": 0,
+          "Max": 0
+        },
+        "Pitch": {
+          "Min": 0,
+          "Max": 0
+        },
+        "Speed": {
+          "Min": 0,
+          "Max": 0
+        }
+      },
+      "EmitOffset": {
+        "X": {
+          "Min": 0
+        }
+      }
+    }
+  ],
+  "BoundingRadius": 100.0,
+  "CullDistance": 100.0,
+  "IsImportant": false
+}

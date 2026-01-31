@@ -16,16 +16,19 @@
     "Flags": {},
     "Textures": [
       {
-        "Sides": "BlockTextures/Plant_Mushroom_Block_Red_Top.png",
-        "UpDown": "BlockTextures/Plant_Mushroom_Block_Red_Top.png",
+        "Sides": "BlockTextures/Clay_Smooth_Yellow.png",
+        "UpDown": "BlockTextures/Clay_Smooth_Yellow.png",
         "Weight": 1
       }
     ],
     "CubeShadingMode": "Fullbright",
     "Light": {
-      "Color": "#f00",
-      "Radius": 1
-    }
+      "Color": "#fff",
+      "Radius": 10
+    },
+    "Tint": [
+      "#28ff00"
+    ]
   },
   "Tags": {
     "Type": [

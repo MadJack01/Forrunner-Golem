@@ -6,6 +6,7 @@
     }
   },
   "DamageEffects": {
+    "CameraEffect": "Impact_Strong",
     "Knockback": {
       "Force": 1,
       "RelativeX": 0,

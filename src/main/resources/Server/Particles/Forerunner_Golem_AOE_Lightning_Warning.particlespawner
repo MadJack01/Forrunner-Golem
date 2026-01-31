@@ -1,0 +1,155 @@
+{
+  "RenderMode": "BlendAdd",
+  "ParticleRotationInfluence": "BillboardY",
+  "LinearFiltering": true,
+  "LightInfluence": 0,
+  "ParticleLifeSpan": {
+    "Min": 1,
+    "Max": 1
+  },
+  "ParticleRotateWithSpawner": false,
+  "TrailSpawnerPositionMultiplier": 0,
+  "TrailSpawnerRotationMultiplier": 0,
+  "WaveDelay": {
+    "Min": 0,
+    "Max": 0
+  },
+  "MaxConcurrentParticles": 25,
+  "SpawnRate": {
+    "Min": 25,
+    "Max": 25
+  },
+  "TotalParticles": {
+    "Min": 50,
+    "Max": 50
+  },
+  "Attractors": [
+    {
+      "RadialImpulse": 5,
+      "DampingMultiplier": {
+        "X": 0.5314410000000002,
+        "Y": 0.5314410000000002,
+        "Z": 0.5314410000000002
+      },
+      "Position": {
+        "Y": 0,
+        "X": 0
+      },
+      "RadialAxis": {
+        "Y": 0
+      },
+      "LinearImpulse": {
+        "Y": 0,
+        "X": 0,
+        "Z": 0
+      },
+      "LinearAcceleration": {
+        "Y": 0,
+        "X": 0,
+        "Z": 0
+      },
+      "TrailPositionMultiplier": 0
+    }
+  ],
+  "Particle": {
+    "Texture": "Particles/Textures/Shapes/LightningVoid.png",
+    "FrameSize": {
+      "Width": 64,
+      "Height": 124
+    },
+    "UVOption": "RandomFlipU",
+    "Animation": {
+      "0": {
+        "Opacity": 0
+      },
+      "10": {
+        "FrameIndex": {
+          "Min": 0,
+          "Max": 3
+        },
+        "Scale": {
+          "X": {
+            "Min": 0.4,
+            "Max": 0.4
+          },
+          "Y": {
+            "Min": 0.4,
+            "Max": 0.4
+          }
+        },
+        "Rotation": {
+          "X": {
+            "Min": -1,
+            "Max": -1
+          },
+          "Y": {
+            "Min": -1,
+            "Max": -1
+          },
+          "Z": {
+            "Min": -51,
+            "Max": 49
+          }
+        },
+        "Opacity": 0
+      },
+      "21": {
+        "Opacity": 1,
+        "Color": "#ff0000"
+      },
+      "86": {
+        "FrameIndex": {
+          "Min": 4,
+          "Max": 5
+        },
+        "Opacity": 1,
+        "Color": "#f8ff00"
+      },
+      "100": {
+        "Opacity": 0
+      }
+    },
+    "InitialAnimationFrame": {
+      "Opacity": 1,
+      "FrameIndex": {
+        "Min": 0
+      },
+      "Scale": {
+        "X": {
+          "Min": 3,
+          "Max": 3
+        }
+      }
+    },
+    "UseSpriteBlending": false
+  },
+  "SpawnBurst": true,
+  "UseEmitDirection": true,
+  "Shape": "Sphere",
+  "UVMotion": {
+    "AddRandomUVOffset": false
+  },
+  "EmitOffset": {
+    "X": {
+      "Min": 0,
+      "Max": 0
+    },
+    "Z": {
+      "Min": 0
+    }
+  },
+  "InitialVelocity": {
+    "Yaw": {
+      "Min": 1,
+      "Max": 1
+    },
+    "Pitch": {
+      "Min": 1,
+      "Max": 1
+    },
+    "Speed": {
+      "Min": 10,
+      "Max": 20
+    }
+  }
+}
