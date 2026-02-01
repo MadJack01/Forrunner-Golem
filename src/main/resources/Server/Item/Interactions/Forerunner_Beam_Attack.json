@@ -48,12 +48,8 @@
             "$Comment": "Length of Effect",
             "RunTime": 0.183,
             "Effects": {
-              "WorldSoundEventId": "SFX_Golem_Earth_Swing",
-              "Particles": [
-                {
-                  "SystemId": "Flamethrower_Effect"
-                }
-              ]
+              "WorldSoundEventId": "SFX_Sword_T2_Signature_Part_2",
+              "LocalSoundEventId": "SFX_Sword_T2_Signature_Part_2_Local"
             }
           }
         ]

@@ -50,8 +50,8 @@
                   "TargetEntityPart": "Entity"
                 }
               ],
-              "WorldSoundEventId": "SFX_Daggers_T1_Pounce",
-              "LocalSoundEventId": "SFX_Daggers_T1_Pounce_Local"
+              "WorldSoundEventId": "SFX_Skeleton_Mage_Spellbook_Impact",
+              "LocalSoundEventId": "SFX_Skeleton_Mage_Spellbook_Impact"
             }
           }
         ]

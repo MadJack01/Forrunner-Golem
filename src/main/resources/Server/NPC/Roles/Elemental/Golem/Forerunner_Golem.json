@@ -2,7 +2,7 @@
   "Type": "Variant",
   "Reference": "Template_Intelligent_Forerunner_Golem",
   "Modify": {
-    "NextPhaseRole": "Forerunner_Golem_Phase_2",
+    "NextPhaseRole": "Forerunner_Golem2",
     "NextPhaseRangeHp": [
       0,
       0.75
@@ -10,7 +10,7 @@
     "MaxHealth": 2000,
     "ViewSector": 150,
     "DropList": "Empty",
-    "Appearance": "Forerunner_Golem",
+    "Appearance": "Forerunner_Golem1",
     "Weapons": [],
     "OffHand": [],
     "MaxSpeed": 7,
