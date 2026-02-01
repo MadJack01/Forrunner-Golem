@@ -4,7 +4,7 @@
   "Modify": {
     "NextPhaseRole": "Forerunner_Golem_Phase_2",
     "NextPhaseRangeHp": [0, 0.75],
-    "MaxHealth": 160,
+    "MaxHealth": 3500,
     "ViewSector": 150,
     "DropList": "Empty",
     "Appearance": "Forerunner_Golem",

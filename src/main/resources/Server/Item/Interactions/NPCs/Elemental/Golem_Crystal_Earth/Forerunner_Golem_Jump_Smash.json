@@ -30,7 +30,7 @@
                   "Type": "Replace",
                   "DefaultValue": {
                     "Interactions": [
-                      "Forerunner_Golem_NPC_Jump_Smash_Damage"
+                      "Forerunner_Golem_Jump_Slam_Damage"
                     ]
                   },
                   "Var": ""
