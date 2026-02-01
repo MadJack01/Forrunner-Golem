@@ -1,6 +1,7 @@
 {
   "Type": "Abstract",
   "StartState": "Idle",
+  "Debug": "DisplayState",
   "Parameters": {
     "Appearance": {
       "Value": "Trork_Hunter",
@@ -452,6 +453,11 @@
           }
         },
         {
+          "Type": "PlaySound",
+          "Once": true,
+          "SoundEventId": "Empty"
+        },
+        {
           "Type": "PlayAnimation",
           "Slot": "Status",
           "Animation": "Laydown"
@@ -477,9 +483,25 @@
           ]
         }
       ],
-      "Actions": {
-        "Reference": "Component_ActionList_Wake"
-      }
+      "Actions": [
+        {
+          "Type": "PlaySound",
+          "Once": true,
+          "SoundEventId": "Boss_Sound_Event"
+        },
+        {
+          "Type": "PlayAnimation",
+          "Slot": "Status",
+          "Animation": "Wake"
+        },
+        {
+          "Type": "Timeout",
+          "Delay": [
+            1,
+            1.1
+          ]
+        }
+      ]
     },
     {
       "$Comment": "Always clear animation when moving from Alerted state.",
@@ -570,6 +592,29 @@
   "Instructions": [
     {
       "Instructions": [
+        {
+          "Sensor": {
+            "$Comment": "Skip to Phase_2 early if enough damage has been taken while on the throne",
+            "Type": "Self",
+            "Once": true,
+            "Filters": [
+              {
+                "Type": "Stat",
+                "StatTarget": "Value",
+                "RelativeTo": "Health",
+                "Stat": "Health",
+                "RelativeToTarget": "Max",
+                "ValueRange": [ 0, 0.8 ]
+              }
+            ]
+          },
+          "Actions": [
+            {
+              "Type": "DispatchEventPhase",
+              "NextPhase": "Phase2"
+            }
+          ]
+        },
         {
           "Sensor": {
             "Type": "State",
