@@ -595,6 +595,7 @@
             "Filters": [
               {
                 "Type": "Stat",
+                "Once": true,
                 "StatTarget": "Value",
                 "RelativeTo": "Health",
                 "Stat": "Health",

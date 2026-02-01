@@ -77,7 +77,7 @@ public class TriggerPhasedHandler implements Consumer<TriggerPhasedEvent> {
         TransformComponent transformComponent = store.getComponent(npcRef, TransformComponent.getComponentType());
         Vector3i npcPos = transformComponent.getPosition().toVector3i();
 
-        int radius = 20;
+        int radius = 100;
 
         Vector3i startPosition = npcPos.clone().add(-radius, 0, -radius);
         Vector3i endPosition = npcPos.clone().add(radius, 0, radius);
@@ -96,12 +96,6 @@ public class TriggerPhasedHandler implements Consumer<TriggerPhasedEvent> {
             BuilderToolsPlugin.getState(player, playerRef).setSelection(blockSelection);
             assert player.getReference() != null;
             BuilderToolsPlugin.getState(player, playerRef).replace(player.getReference(), fromReplaceMaterial, toReplaceMateriel, store);
-
-            try {
-                TimeUnit.MILLISECONDS.sleep(4);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
         }
     }
 }
