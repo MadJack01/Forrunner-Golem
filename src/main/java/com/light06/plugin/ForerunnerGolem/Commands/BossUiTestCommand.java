@@ -27,10 +27,8 @@ public class BossUiTestCommand extends AbstractPlayerCommand {
     protected void execute(@Nonnull CommandContext commandContext, @Nonnull Store<EntityStore> store, @Nonnull Ref<EntityStore> ref, @Nonnull PlayerRef playerRef, @Nonnull World world) {
         Player player = store.getComponent(ref, Player.getComponentType());
         PlayerRef pRef = store.getComponent(ref, PlayerRef.getComponentType());
-        if (player == null || pRef == null) {
-            return;
-        }
-        TriggerBossEvent.dispatch(ref);
+        if (player == null || pRef == null) { return; }
+        TriggerBossEvent.dispatch(player, pRef);
 
         BlockSelection blockSelection = new BlockSelection();
 

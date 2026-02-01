@@ -33,11 +33,16 @@ public class BossHealthHud extends CustomUIHud {
         builder.set("#BossHealthBar.Value", percentagePv);
     }
 
-    public static void setHudManager(@Nonnull Player player, @Nonnull PlayerRef pRef) {
-        HudManager hudManager = player.getHudManager();
+    public static void setHudManager(@Nonnull Player player, @Nonnull PlayerRef pRef, boolean isErased) {
         String bossName = "Golem test name";
+        HudManager hudManager = player.getHudManager();
 
+        assert player.getWorld() != null;
         CompletableFuture.runAsync(()-> {
+            if (isErased) {
+                player.getHudManager().setCustomHud(pRef, new EmptyHudUI(pRef));
+                return;
+            }
             if (!(hudManager.getCustomHud() instanceof BossHealthHud)) {
                 hudManager.setCustomHud(pRef, new BossHealthHud(pRef, bossName, 1));
                 EventTitleUtil.showEventTitleToPlayer(pRef,
@@ -50,10 +55,8 @@ public class BossHealthHud extends CustomUIHud {
                         Message.raw("A powerful enemy approaches!"),
                         NotificationStyle.Danger);
             } else {
-                if (hudManager != null) {
-                    hudManager.setCustomHud(pRef, new EmptyHudUI(pRef));
-                }
+                player.getHudManager().setCustomHud(pRef, new EmptyHudUI(pRef));
             }
-        });
+        }, player.getWorld());
     }
 }

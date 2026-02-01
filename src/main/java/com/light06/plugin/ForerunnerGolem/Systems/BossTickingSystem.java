@@ -29,7 +29,7 @@ public class BossTickingSystem extends EntityTickingSystem<EntityStore> {
     public void tick(float v, int i, @NonNullDecl ArchetypeChunk<EntityStore> archetypeChunk, @NonNullDecl Store<EntityStore> store, @NonNullDecl CommandBuffer<EntityStore> commandBuffer) {
         NPCEntity npc = archetypeChunk.getComponent(i, NPCEntity.getComponentType());
 
-        if(npc == null || !npc.getRoleName().startsWith("Golem")) {
+        if(npc == null || !npc.getRoleName().startsWith("Forerunner_Golem")) {
             return;
         }
 
