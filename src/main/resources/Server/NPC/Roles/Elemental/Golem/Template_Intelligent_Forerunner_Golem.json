@@ -3,8 +3,28 @@
   "StartState": "Idle",
   "Debug": "DisplayState",
   "Parameters": {
+    "NextPhaseRangeHp": {
+      "Value": [0,0],
+      "Description": "The range of HP for trigger next phase"
+    },
+    "NextPhaseRole": {
+      "Value": "Forerunner_Golem",
+      "Description": "The NPC Role of the next phase"
+    },
+    "SummonCountRange": {
+      "Value": [1,1],
+      "Description": "The range of number npc to spawn"
+    },
+    "SummonDistanceRange": {
+      "Value": [2,10],
+      "Description": "The range of distance to spawn"
+    },
+    "SummonDelayRange": {
+      "Value": [0,0],
+      "Description": "The range of delay to spawn"
+    },
     "Appearance": {
-      "Value": "Trork_Hunter",
+      "Value": "Forerunner_Golem",
       "Description": "Model to be used."
     },
     "ApplySeparation": {
@@ -595,19 +615,23 @@
             "Filters": [
               {
                 "Type": "Stat",
-                "Once": true,
                 "StatTarget": "Value",
                 "RelativeTo": "Health",
                 "Stat": "Health",
                 "RelativeToTarget": "Max",
-                "ValueRange": [ 0, 0.8 ]
+                "ValueRange": {"Compute": "NextPhaseRangeHp"}
               }
             ]
           },
           "Actions": [
             {
               "Type": "DispatchEventPhase",
-              "NextPhase": "Phase2"
+              "NextPhase": {"Compute": "NextPhaseRole"}
+            },
+            {
+              "Type": "Role",
+              "Once": true,
+              "Role": {"Compute": "NextPhaseRole"}
             }
           ]
         },
@@ -1449,18 +1473,9 @@
                     "Compute": "SummonKind"
                   },
                   "JoinFlock": true,
-                  "CountRange": [
-                    1,
-                    2
-                  ],
-                  "DistanceRange": [
-                    2,
-                    15
-                  ],
-                  "DelayRange": [
-                    0,
-                    0.4
-                  ]
+                  "CountRange": {"Compute": "SummonCountRange"},
+                  "DistanceRange": {"Compute": "SummonDistanceRange"},
+                  "DelayRange": {"Compute": "SummonDelayRange"}
                 },
                 {
                   "Type": "FlockBeacon",

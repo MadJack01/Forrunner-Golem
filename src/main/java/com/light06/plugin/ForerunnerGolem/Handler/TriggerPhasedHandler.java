@@ -1,34 +1,23 @@
 package com.light06.plugin.ForerunnerGolem.Handler;
 
-import com.hypixel.hytale.assetstore.map.BlockTypeAssetMap;
-import com.hypixel.hytale.assetstore.map.IndexedLookupTableAssetMap;
 import com.hypixel.hytale.builtin.buildertools.BuilderToolsPlugin;
 import com.hypixel.hytale.builtin.buildertools.utils.Material;
 import com.hypixel.hytale.builtin.weather.resources.WeatherResource;
-import com.hypixel.hytale.component.Holder;
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
-import com.hypixel.hytale.math.util.ChunkUtil;
 import com.hypixel.hytale.math.vector.Vector3i;
-import com.hypixel.hytale.server.core.asset.type.blockhitbox.BlockBoundingBoxes;
-import com.hypixel.hytale.server.core.asset.type.blocktype.config.BlockType;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.modules.entity.component.TransformComponent;
 import com.hypixel.hytale.server.core.prefab.selection.standard.BlockSelection;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.WorldConfig;
-import com.hypixel.hytale.server.core.universe.world.accessor.LocalCachedChunkAccessor;
-import com.hypixel.hytale.server.core.universe.world.chunk.WorldChunk;
-import com.hypixel.hytale.server.core.universe.world.storage.ChunkStore;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import com.hypixel.hytale.server.core.util.FillerBlockUtil;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
 import com.light06.plugin.ForerunnerGolem.Events.TriggerPhasedEvent;
 
 import javax.annotation.Nonnull;
 import java.util.Objects;
-import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 
 public class TriggerPhasedHandler implements Consumer<TriggerPhasedEvent> {
@@ -66,7 +55,7 @@ public class TriggerPhasedHandler implements Consumer<TriggerPhasedEvent> {
         String fromReplace = "Forerunner_Neon";
         String toReplace = "Forerunner_Neon2";
 
-        if (nextPhase.equals("Phase3")) {
+        if (nextPhase.equals("Forerunner_Golem_Phase_3")) {
             fromReplace = "Forerunner_Neon2";
             toReplace = "Forerunner_Neon3";
         }
