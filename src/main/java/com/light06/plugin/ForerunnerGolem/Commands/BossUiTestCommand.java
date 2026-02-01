@@ -40,8 +40,8 @@ public class BossUiTestCommand extends AbstractPlayerCommand {
 
         int radius = 100;
 
-        Material fromReplace = Material.fromKey("Cloth_Block_Wool_Red");
-        Material toReplace = Material.fromKey("Cloth_Block_Wool_Yellow");
+        Material fromReplace = Material.fromKey("Forerunner_Neon");
+        Material toReplace = Material.fromKey("Forerunner_Neon2");
 
         Vector3i startPosition = playerPos.clone().add(-radius, 0, -radius);
         Vector3i endPosition = playerPos.clone().add(radius, 0, radius);
@@ -50,7 +50,7 @@ public class BossUiTestCommand extends AbstractPlayerCommand {
             return;
         }
 
-        for (int y = 50; y < 400; y++) {
+        for (int y = 102; y < 350; y++) {
             blockSelection.setSelectionArea(startPosition, endPosition);
             startPosition.setY(y);
             endPosition.setY(y);

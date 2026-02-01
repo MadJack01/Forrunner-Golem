@@ -1,5 +1,7 @@
 package com.light06.plugin.ForerunnerGolem.Handler;
 
+import com.hypixel.hytale.assetstore.map.BlockTypeAssetMap;
+import com.hypixel.hytale.assetstore.map.IndexedLookupTableAssetMap;
 import com.hypixel.hytale.builtin.buildertools.BuilderToolsPlugin;
 import com.hypixel.hytale.builtin.buildertools.utils.Material;
 import com.hypixel.hytale.builtin.weather.resources.WeatherResource;
@@ -8,14 +10,19 @@ import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.math.util.ChunkUtil;
 import com.hypixel.hytale.math.vector.Vector3i;
+import com.hypixel.hytale.server.core.asset.type.blockhitbox.BlockBoundingBoxes;
+import com.hypixel.hytale.server.core.asset.type.blocktype.config.BlockType;
+import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.modules.entity.component.TransformComponent;
 import com.hypixel.hytale.server.core.prefab.selection.standard.BlockSelection;
+import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.WorldConfig;
 import com.hypixel.hytale.server.core.universe.world.accessor.LocalCachedChunkAccessor;
 import com.hypixel.hytale.server.core.universe.world.chunk.WorldChunk;
 import com.hypixel.hytale.server.core.universe.world.storage.ChunkStore;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
+import com.hypixel.hytale.server.core.util.FillerBlockUtil;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
 import com.light06.plugin.ForerunnerGolem.Events.TriggerPhasedEvent;
 
@@ -53,6 +60,9 @@ public class TriggerPhasedHandler implements Consumer<TriggerPhasedEvent> {
     }
 
     private void replaceBlock(String nextPhase, Ref<EntityStore> npcRef, World world, @Nonnull Store<EntityStore> store) {
+        PlayerRef playerRef = world.getPlayerRefs().stream().findFirst().get();
+        Player player = store.getComponent(Objects.requireNonNull(playerRef.getReference()), Player.getComponentType());
+
         String fromReplace = "Forerunner_Neon";
         String toReplace = "Forerunner_Neon2";
 
@@ -67,9 +77,9 @@ public class TriggerPhasedHandler implements Consumer<TriggerPhasedEvent> {
         TransformComponent transformComponent = store.getComponent(npcRef, TransformComponent.getComponentType());
         Vector3i npcPos = transformComponent.getPosition().toVector3i();
 
-        int radius = 1000;
+        int radius = 20;
 
-        Vector3i startPosition = npcPos.clone().add(radius, 0, radius);
+        Vector3i startPosition = npcPos.clone().add(-radius, 0, -radius);
         Vector3i endPosition = npcPos.clone().add(radius, 0, radius);
 
         BlockSelection blockSelection = new BlockSelection();
@@ -78,56 +88,14 @@ public class TriggerPhasedHandler implements Consumer<TriggerPhasedEvent> {
             return;
         }
 
-        for (int i = 50; i < 400; i++) {
-            BlockSelection before = new BlockSelection();
-            Vector3i min = Vector3i.min(startPosition, endPosition);
-            Vector3i max = Vector3i.max(startPosition, endPosition);
-            int xMin = min.getX();
-            int xMax = max.getX();
-            int yMin = min.getY();
-            int yMax = max.getY();
-            int zMin = min.getZ();
-            int zMax = max.getZ();
-            int width = xMax - xMin;
-            int depth = zMax - zMin;
-            int halfWidth = width / 2;
-            int halfDepth = depth / 2;
-            before.setPosition(xMin + halfWidth, yMin, zMin + halfDepth);
-            before.setSelectionArea(min, max);
-            BlockSelection after = new BlockSelection(before);
-            LocalCachedChunkAccessor accessor = LocalCachedChunkAccessor.atWorldCoords(world, xMin + halfWidth, zMin + halfDepth, Math.max(width, depth));
+        for (int y = 105; y < 350; y++) {
+            startPosition.setY(y);
+            endPosition.setY(y);
 
-            int totalBlocks = (width + 1) * (depth + 1) * (yMax - yMin + 1);
-            int counter = 0;
-
-            for(int x = xMin; x <= xMax; ++x) {
-                for (int z = zMin; z <= zMax; ++z) {
-                    WorldChunk chunk = accessor.getChunk(ChunkUtil.indexChunkFromBlock(x, z));
-
-                    for (int y = yMax; y >= yMin; --y) {
-                        int currentFiller = chunk.getFiller(x, y, z);
-                        if (currentFiller != 0) {
-                            ++counter;
-                        } else {
-                            int currentBlock = chunk.getBlock(x, y, z);
-                            boolean shouldReplace = currentBlock == fromReplaceMaterial.getBlockId();
-
-                            if (shouldReplace) {
-                                Holder<ChunkStore> holder = chunk.getBlockComponentHolder(x, y, z);
-                                Holder<ChunkStore> newHolder = BuilderToolsPlugin.createBlockComponent(chunk, x, y, z, toReplaceMateriel.getBlockId(), currentBlock, holder, true);
-                                int rotation = chunk.getRotationIndex(x, y, z);
-                                int supportValue = chunk.getSupportValue(x, y, z);
-                                before.addBlockAtWorldPos(x, y, z, currentBlock, rotation, currentFiller, supportValue, holder);
-                                after.addBlockAtWorldPos(x, y, z, toReplaceMateriel.getBlockId(), rotation, 0, 0, newHolder);
-                                //this.replaceMultiBlockStructure(x, y, z, currentBlock, toReplaceMateriel.getBlockId(), rotation, accessor, before, after);
-                            }
-                        }
-                    }
-                }
-            }
-
-            startPosition.setY(i);
-            endPosition.setY(i);
+            blockSelection.setSelectionArea(startPosition, endPosition);
+            BuilderToolsPlugin.getState(player, playerRef).setSelection(blockSelection);
+            assert player.getReference() != null;
+            BuilderToolsPlugin.getState(player, playerRef).replace(player.getReference(), fromReplaceMaterial, toReplaceMateriel, store);
 
             try {
                 TimeUnit.MILLISECONDS.sleep(4);
