@@ -5,7 +5,7 @@ import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.event.events.player.AddPlayerToWorldEvent;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import com.light06.plugin.TheForerunner.Events.TriggerBossEvent;
+import com.light06.plugin.TheForerunner.UI.BossHealthHud;
 
 public class AddPlayerFromWorldEventListener {
     public static void on(AddPlayerToWorldEvent event) {
@@ -17,6 +17,6 @@ public class AddPlayerFromWorldEventListener {
         Player player = holder.getComponent(Player.getComponentType());
         PlayerRef pRef = holder.getComponent(PlayerRef.getComponentType());
         if (player == null || pRef == null) { return; }
-        TriggerBossEvent.dispatch(player, pRef, true);
+        BossHealthHud.setHudManager(player, pRef, true);
     }
 }

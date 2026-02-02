@@ -174,7 +174,7 @@
 									"$NodeId":	"ColumnLinear.Scanner-c383ee45-bda9-413b-8827-202df4084937",
 									"Type":	"ColumnLinear",
 									"Skip":	false,
-									"MaxY":	80,
+									"MaxY":	121,
 									"MinY":	0,
 									"RelativeToPosition":	false,
 									"BaseHeightName":	"Bedrock",
@@ -250,15 +250,15 @@
 														"Skip":	false,
 														"Max":	{
 															"$NodeId":	"Point3D-d7229eac-dcfa-4fc7-a6ea-4b8716508e08",
-															"X":	7,
-															"Y":	200,
-															"Z":	7
+															"X":	10,
+															"Y":	210,
+															"Z":	10
 														},
 														"Min":	{
 															"$NodeId":	"Point3D-02a970b2-7e2a-4dee-9d4f-59ba6c30f2e1",
-															"X":	-7,
-															"Y":	10,
-															"Z":	-7
+															"X":	-10,
+															"Y":	20,
+															"Z":	-10
 														},
 														"SubPattern":	{
 															"$NodeId":	"BlockType.Pattern-687c998d-ac49-42ad-8ad4-252581396ee7",
@@ -570,8 +570,8 @@
 			},
 			"MeshPointGenerator-2c7da415-9005-4065-9930-03f76657be68":	{
 				"$Position":	{
-					"$x":	-897,
-					"$y":	-1807
+					"$x":	-869,
+					"$y":	-1805
 				}
 			},
 			"Weighted.Assignments-4784741d-1546-4e25-82ae-573fb0b00074":	{
@@ -742,7 +742,7 @@
 				"Type":	"Constant",
 				"Material":	{
 					"$NodeId":	"Material-50829085-5a6a-44c7-8168-19b5cfb10517",
-					"Solid":	"Barrier"
+					"Solid":	"Black_Block"
 				}
 			}, {
 				"$NodeId":	"WeightedPath.Prefab.Prop-1d2451ea-c146-4cf0-9fa5-03952965be48",
