@@ -1,13 +1,13 @@
 {
   "TranslationProperties": {
-    "Name": "server.items.Template_Weapon_Daggers.name"
+    "Name": "Avast Hands"
   },
   "Texture": "Items/Weapons/Dagger/Iron_Texture.png",
-  "Icon": "Icons/ItemsGenerated/Weapon_Daggers_Iron.png",
+  "Icon": "Icons/ItemsGenerated/Forerunner_Golem_Weapon.png",
   "DroppedItemAnimation": "Items/Animations/Dropped/Dropped_Diagonal_Left.blockyanim",
   "PlayerAnimationsId": "Daggers",
   "Reticle": "DefaultMelee",
-  "Quality": "Template",
+  "Quality": "Legendary",
   "ItemSoundSetId": "ISS_Weapon_Blade_Small",
   "ItemLevel": 30,
   "Categories": [
@@ -154,5 +154,6 @@
     ]
   },
   "MaxDurability": 80,
-  "DurabilityLossOnHit": 0.1
+  "DurabilityLossOnHit": 0.1,
+  "Model": "NPC/MISC/Empty.blockymodel"
 }

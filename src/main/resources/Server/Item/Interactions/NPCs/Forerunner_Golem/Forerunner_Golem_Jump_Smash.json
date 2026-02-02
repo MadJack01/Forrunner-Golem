@@ -2,7 +2,8 @@
   "Type": "Simple",
   "Effects": {
     "ItemPlayerAnimationsId": "Forerunner_Golem_Default",
-    "ItemAnimationId": "JumpFar"
+    "ItemAnimationId": "JumpFar",
+    "ClearAnimationOnFinish": false
   },
   "$Comment": "Prepare Delay",
   "RunTime": 0.1,

@@ -2,7 +2,7 @@
   "TranslationProperties": {
     "Name": "server.items.Launchpad.name"
   },
-  "Icon": "Icons/ItemsGenerated/Forerunner_Launchpad2.png",
+  "Icon": "Icons/ItemsGenerated/Forerunner_Launchpad.png",
   "Categories": [
     "Blocks.Structural"
   ],
