@@ -1,9 +1,9 @@
 {
   "Parent": "Default",
   "World": {
-    "AllowBlockBreaking": true,
-    "AllowBlockGathering": true,
-    "AllowBlockPlacement": true
+    "AllowBlockBreaking": false,
+    "AllowBlockGathering": false,
+    "AllowBlockPlacement": false
   },
   "Death": {
     "LoseItems": false,

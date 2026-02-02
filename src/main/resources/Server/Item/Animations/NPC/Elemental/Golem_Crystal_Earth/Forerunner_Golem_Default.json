@@ -23,6 +23,10 @@
     "ShootBeam": {
       "ThirdPerson": "NPC/Boss/Forerunner Golem/Animations/Beam_Turret_ Shot.blockyanim",
       "ThirdPersonMoving": "NPC/Boss/Forerunner Golem/Animations/Beam_Turret_ Shot.blockyanim"
+    },
+    "AOEAttack": {
+      "ThirdPerson": "NPC/Boss/Forerunner Golem/Animations/AOE_Attack.blockyanim",
+      "ThirdPersonMoving": "NPC/Boss/Forerunner Golem/Animations/AOE_Attack.blockyanim"
     }
   },
   "Camera": {

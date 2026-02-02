@@ -4,20 +4,20 @@
   },
   "PlayerAnimationsId": "Block",
   "Categories": [
-    "Furniture.Lighting"
+    "Blocks.Rocks"
   ],
   "Set": "Furniture_Crude",
-  "Icon": "Icons/ItemsGenerated/Forerunner_Barrier_Particles.png",
+  "Icon": "Icons/ItemsGenerated/Furniture_Royal_Magic_Potion_Glow.png",
   "IconProperties": {
-    "Scale": 0.2,
+    "Scale": 0.5,
     "Rotation": [
       22.5,
       45,
       22.5
     ],
     "Translation": [
-      0,
-      -13.5
+      -1,
+      -23
     ]
   },
   "InteractionConfig": {
@@ -33,11 +33,15 @@
     "Secondary": "Block_Secondary"
   },
   "BlockType": {
-    "PlacementSettings": {
-      "CeilingPlacementOverrideBlockId": "Furniture_Royal_Magic_Potion_Glow_Ceiling"
-    },
+    "BlockParticleSetId": "GlassMagic",
     "BlockSoundSetId": "Metal",
+    "CustomModel": "Blocks/Decorative_Sets/Ancient/Ladder.blockymodel",
     "CustomModelScale": 0.7,
+    "CustomModelTexture": [
+      {
+        "Texture": "Blocks/_Debug/TextureEmpty.png"
+      }
+    ],
     "DrawType": "Model",
     "Flags": {},
     "Gathering": {
@@ -45,7 +49,10 @@
         "IsWeaponBreakable": false
       }
     },
-    "HitboxType": "Torch_Small",
+    "Light": {
+      "Radius": 1,
+      "Color": "#0ef"
+    },
     "Opacity": "Transparent",
     "RandomRotation": "YawStep1",
     "Support": {
@@ -89,56 +96,32 @@
         }
       ]
     },
-    "Looping": true,
+    "Looping": false,
     "Material": "Solid",
-    "Interactions": {
-      "Use": {
-        "Interactions": [
-          {
-            "Type": "ChangeState",
-            "Changes": {
-              "default": "Off",
-              "Off": "default"
-            }
-          }
-        ]
+    "Particles": [
+      {
+        "SystemId": "Forerunner_Beam_Particles",
+        "DetachedFromModel": false,
+        "PositionOffset": {
+          "Y": 0,
+          "Z": 0
+        },
+        "TargetEntityPart": "Entity",
+        "TargetNodeName": "Glow"
       }
-    },
+    ],
     "State": {
       "Definitions": {
-        "On": {
-          "AmbientSoundEventId": "SFX_Campfire_Default_Loop"
-        },
+        "On": {},
         "Off": {
           "InteractionHint": "server.interactionHints.turnon",
           "Light": null,
           "Particles": null,
-          "InteractionSoundEventId": "SFX_Torch_Off",
           "AmbientSoundEventId": null
         }
       }
     },
-    "InteractionHint": "server.interactionHints.turnoff",
-    "AmbientSoundEventId": "SFX_Campfire_Default_Loop",
-    "Particles": [
-      {
-        "SystemId": "Forerunner_Beam_Particles",
-        "TargetEntityPart": "Entity",
-        "Color": "#00e4ff",
-        "Scale": 5,
-        "PositionOffset": {
-          "Z": 0
-        },
-        "RotationOffset": {
-          "Pitch": 90
-        }
-      }
-    ],
-    "CustomModelTexture": [
-      {
-        "Texture": "Blocks/_Debug/TextureEmpty.png"
-      }
-    ]
+    "SupportDropType": "Destroy"
   },
   "Tags": {
     "Type": [
@@ -148,6 +131,8 @@
       "Crude"
     ]
   },
-  "Scale": 1.5,
-  "ItemSoundSetId": "ISS_Blocks_Wood"
+  "Utility": {
+    "Usable": false
+  },
+  "Scale": 1
 }

@@ -1,9 +1,9 @@
 {
   "Type": "ApplyForce",
-  "Force": 50,
+  "Force": 250,
   "Direction": {
     "X": 0,
-    "Y": 2,
+    "Y": 10,
     "Z": 0
   },
   "AdjustVertical": false,

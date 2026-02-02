@@ -31,20 +31,6 @@
     ],
     "BlockSoundSetId": "Metal",
     "ParticleColor": "#00ff00",
-    "Interactions": {
-      "Use": {
-        "Interactions": [
-          {
-            "Type": "ChangeState",
-            "Changes": {
-              "default": "Off",
-              "On": "Off",
-              "Off": "On"
-            }
-          }
-        ]
-      }
-    },
     "BiomeTint": 100
   },
   "Tags": {

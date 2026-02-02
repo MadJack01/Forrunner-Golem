@@ -14,7 +14,7 @@
             "RunTime": 0.01,
             "Selector": {
               "Id": "Stab",
-              "EndDistance": 20,
+              "EndDistance": 30,
               "ExtendTop": 4,
               "ExtendBottom": 4,
               "ExtendLeft": 1,

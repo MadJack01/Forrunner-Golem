@@ -59,12 +59,12 @@
   "Particle": {
     "SystemId": "Magic_Sparks_Heavy_GS",
     "OvergroundOnly": true,
-    "Color": "#530101"
+    "Color": "#27a206"
   },
   "SunGlowColors": [
     {
       "Hour": 0,
-      "Color": "#6d0303ff"
+      "Color": "#106d03ff"
     }
   ],
   "SunColors": [
@@ -76,7 +76,7 @@
   "MoonGlowColors": [
     {
       "Hour": 0,
-      "Color": "#3d0240ff"
+      "Color": "#364002ff"
     }
   ],
   "Moons": [

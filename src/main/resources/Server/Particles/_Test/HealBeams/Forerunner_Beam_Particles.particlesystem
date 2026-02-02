@@ -2,7 +2,16 @@
   "Spawners": [
     {
       "SpawnerId": "Forerunner_Beam_Particles_Template",
-      "FixedRotation": false
+      "FixedRotation": true,
+      "RotationOffset": {
+        "Yaw": 0,
+        "Pitch": 90,
+        "Roll": 0
+      },
+      "PositionOffset": {
+        "Z": 0,
+        "Y": 0
+      }
     }
   ],
   "CullDistance": 125,
