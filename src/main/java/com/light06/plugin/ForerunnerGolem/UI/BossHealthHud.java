@@ -34,7 +34,7 @@ public class BossHealthHud extends CustomUIHud {
     }
 
     public static void setHudManager(@Nonnull Player player, @Nonnull PlayerRef pRef, boolean isErased) {
-        String bossName = "Golem test name";
+        String bossName = "Avast";
         HudManager hudManager = player.getHudManager();
 
         assert player.getWorld() != null;

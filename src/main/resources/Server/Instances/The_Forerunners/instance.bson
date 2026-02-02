@@ -26,8 +26,8 @@
   "SpawnProvider": {
     "Id": "Global",
     "SpawnPoint": {
-      "X": -5.5,
-      "Y": 191,
+      "X": 2.5,
+      "Y": 252,
       "Z": -136.5,
       "Pitch": 0,
       "Yaw": 180,

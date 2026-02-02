@@ -174,7 +174,7 @@
 									"$NodeId":	"ColumnLinear.Scanner-c383ee45-bda9-413b-8827-202df4084937",
 									"Type":	"ColumnLinear",
 									"Skip":	false,
-									"MaxY":	130,
+									"MaxY":	80,
 									"MinY":	0,
 									"RelativeToPosition":	false,
 									"BaseHeightName":	"Bedrock",
@@ -250,15 +250,15 @@
 														"Skip":	false,
 														"Max":	{
 															"$NodeId":	"Point3D-d7229eac-dcfa-4fc7-a6ea-4b8716508e08",
-															"X":	5,
+															"X":	7,
 															"Y":	200,
-															"Z":	5
+															"Z":	7
 														},
 														"Min":	{
 															"$NodeId":	"Point3D-02a970b2-7e2a-4dee-9d4f-59ba6c30f2e1",
-															"X":	-5,
+															"X":	-7,
 															"Y":	10,
-															"Z":	-5
+															"Z":	-7
 														},
 														"SubPattern":	{
 															"$NodeId":	"BlockType.Pattern-687c998d-ac49-42ad-8ad4-252581396ee7",
@@ -325,6 +325,11 @@
 		"$NodeId":	"Constant.EnvironmentProvider-051385ad-f524-45a1-aeb7-c8122adda36a",
 		"Type":	"Constant",
 		"Environment":	"Forerunner_Env"
+	},
+	"TintProvider":	{
+		"$NodeId":	"Constant.TintProvider-b84d2228-483a-4b4c-8c72-722d3bb72cc0",
+		"Type":	"Constant",
+		"Color":	"#51ff00"
 	},
 	"$NodeEditorMetadata":	{
 		"$Nodes":	{
@@ -617,6 +622,48 @@
 					"$y":	-1386
 				}
 			},
+			"And.Pattern-7820b535-3f93-4e64-b0e5-ada2a88b09b5":	{
+				"$Position":	{
+					"$x":	2882,
+					"$y":	-1367
+				}
+			},
+			"Cuboid.Pattern-53a2245d-caf9-44ed-9ea4-c6abec395a7e":	{
+				"$Position":	{
+					"$x":	3521,
+					"$y":	-1382
+				}
+			},
+			"Point3D-d7229eac-dcfa-4fc7-a6ea-4b8716508e08":	{
+				"$Position":	{
+					"$x":	4338,
+					"$y":	-2169
+				}
+			},
+			"Point3D-02a970b2-7e2a-4dee-9d4f-59ba6c30f2e1":	{
+				"$Position":	{
+					"$x":	4330,
+					"$y":	-1959
+				}
+			},
+			"BlockType.Pattern-687c998d-ac49-42ad-8ad4-252581396ee7":	{
+				"$Position":	{
+					"$x":	4344,
+					"$y":	-1728
+				}
+			},
+			"Material-bd7b017c-aa15-446f-9527-d9fe864df126":	{
+				"$Position":	{
+					"$x":	5011,
+					"$y":	-1723
+				}
+			},
+			"Floor.Pattern-c61f0f01-c56b-4069-a273-71aff7e8f854":	{
+				"$Position":	{
+					"$x":	3534,
+					"$y":	-1151
+				}
+			},
 			"BlockSet.Pattern-e07373f3-a713-4077-8532-a12b1289fa72":	{
 				"$Position":	{
 					"$x":	4438,
@@ -688,55 +735,9 @@
 					"$x":	2261,
 					"$y":	-3033
 				}
-			},
-			"BlockType.Pattern-687c998d-ac49-42ad-8ad4-252581396ee7":	{
-				"$Position":	{
-					"$x":	4344,
-					"$y":	-1728
-				}
-			},
-			"Material-bd7b017c-aa15-446f-9527-d9fe864df126":	{
-				"$Position":	{
-					"$x":	5011,
-					"$y":	-1723
-				}
-			},
-			"Floor.Pattern-c61f0f01-c56b-4069-a273-71aff7e8f854":	{
-				"$Position":	{
-					"$x":	3534,
-					"$y":	-1151
-				}
-			},
-			"Cuboid.Pattern-53a2245d-caf9-44ed-9ea4-c6abec395a7e":	{
-				"$Position":	{
-					"$x":	3521,
-					"$y":	-1382
-				}
-			},
-			"Point3D-02a970b2-7e2a-4dee-9d4f-59ba6c30f2e1":	{
-				"$Position":	{
-					"$x":	4330,
-					"$y":	-1959
-				}
-			},
-			"Point3D-d7229eac-dcfa-4fc7-a6ea-4b8716508e08":	{
-				"$Position":	{
-					"$x":	4338,
-					"$y":	-2169
-				}
-			},
-			"And.Pattern-7820b535-3f93-4e64-b0e5-ada2a88b09b5":	{
-				"$Position":	{
-					"$x":	2882,
-					"$y":	-1367
-				}
 			}
 		},
 		"$FloatingNodes":	[{
-				"$NodeId":	"Constant.TintProvider-b84d2228-483a-4b4c-8c72-722d3bb72cc0",
-				"Type":	"Constant",
-				"Color":	"#5b9e28"
-			}, {
 				"$NodeId":	"ConstantMaterialProvider-0f425809-8d77-4c01-b383-22a3fd31c1c6",
 				"Type":	"Constant",
 				"Material":	{

@@ -55,7 +55,7 @@ public class BossTickingSystem extends EntityTickingSystem<EntityStore> {
             assert player != null;
             HudManager hudManager = player.getHudManager();
 
-            BossHealthHud healthHud = new BossHealthHud(playerRef, "Golem test name", healthValue.asPercentage());
+            BossHealthHud healthHud = new BossHealthHud(playerRef, "Avast", healthValue.asPercentage());
 
             if(healthValue.asPercentage() == 0) {
                 hudManager.setCustomHud(playerRef, new EmptyHudUI(playerRef));
