@@ -1,10 +1,14 @@
 package com.light06.plugin.ForerunnerGolem.Handler;
 
 import com.hypixel.hytale.builtin.buildertools.BuilderToolsPlugin;
+import com.hypixel.hytale.builtin.buildertools.commands.TintCommand;
+import com.hypixel.hytale.builtin.buildertools.snapshot.BlockSelectionSnapshot;
 import com.hypixel.hytale.builtin.buildertools.utils.Material;
 import com.hypixel.hytale.builtin.weather.resources.WeatherResource;
+import com.hypixel.hytale.component.Holder;
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
+import com.hypixel.hytale.math.util.ChunkUtil;
 import com.hypixel.hytale.math.vector.Vector3i;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.modules.entity.component.TransformComponent;
@@ -12,6 +16,9 @@ import com.hypixel.hytale.server.core.prefab.selection.standard.BlockSelection;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.WorldConfig;
+import com.hypixel.hytale.server.core.universe.world.accessor.LocalCachedChunkAccessor;
+import com.hypixel.hytale.server.core.universe.world.chunk.WorldChunk;
+import com.hypixel.hytale.server.core.universe.world.storage.ChunkStore;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
 import com.light06.plugin.ForerunnerGolem.Events.TriggerPhasedEvent;
@@ -34,7 +41,7 @@ public class TriggerPhasedHandler implements Consumer<TriggerPhasedEvent> {
 
         assert world != null;
         this.switchWeather(event.nextPhase(), world, store);
-       // this.replaceBlock(event.nextPhase(), event.npcRef(), world, store);
+        this.replaceBlock(event.nextPhase(), event.npcRef(), world, store);
     }
 
     private void switchWeather(String nextPhase, World world, @Nonnull Store<EntityStore> store) {
@@ -49,42 +56,52 @@ public class TriggerPhasedHandler implements Consumer<TriggerPhasedEvent> {
     }
 
     private void replaceBlock(String nextPhase, Ref<EntityStore> npcRef, World world, @Nonnull Store<EntityStore> store) {
-        PlayerRef playerRef = world.getPlayerRefs().stream().findFirst().get();
-        Player player = store.getComponent(Objects.requireNonNull(playerRef.getReference()), Player.getComponentType());
-
-        String fromReplace = "Forerunner_Neon";
-        String toReplace = "Forerunner_Neon2";
+        String nextTint;
 
         if (nextPhase.equals("Forerunner_Golem3")) {
-            fromReplace = "Forerunner_Neon2";
-            toReplace = "Forerunner_Neon3";
+            nextTint = "e8ee0d";
+        } else {
+            nextTint = "ff0000";
         }
-
-        Material fromReplaceMaterial = Material.fromKey(fromReplace);
-        Material toReplaceMateriel = Material.fromKey(toReplace);
 
         TransformComponent transformComponent = store.getComponent(npcRef, TransformComponent.getComponentType());
         Vector3i npcPos = transformComponent.getPosition().toVector3i();
 
-        int radius = 500;
+        int radius = 300;
 
-        Vector3i startPosition = npcPos.clone().add(-radius, 0, -radius);
-        Vector3i endPosition = npcPos.clone().add(radius, 0, radius);
+        Vector3i startPosition = npcPos.clone().add(-radius, -80, -radius);
+        Vector3i endPosition = npcPos.clone().add(radius, 150, radius);
 
-        BlockSelection blockSelection = new BlockSelection();
+        world.execute(() -> {
+            Vector3i min = Vector3i.min(startPosition, endPosition);
+            Vector3i max = Vector3i.max(startPosition, endPosition);
 
-        if(fromReplaceMaterial == null || toReplaceMateriel == null) {
-            return;
-        }
+            int minX = min.getX();
+            int minZ = min.getZ();
+            int maxX = max.getX();
+            int maxZ = max.getZ();
 
-        for (int y = 105; y < 350; y++) {
-            startPosition.setY(y);
-            endPosition.setY(y);
+            for(int cx = ChunkUtil.chunkCoordinate(minX); cx <= ChunkUtil.chunkCoordinate(maxX); ++cx) {
+                for(int cz = ChunkUtil.chunkCoordinate(minZ); cz <= ChunkUtil.chunkCoordinate(maxZ); ++cz) {
+                    int startX = Math.max(0, minX - ChunkUtil.minBlock(cx));
+                    int startZ = Math.max(0, minZ - ChunkUtil.minBlock(cz));
+                    int endX = Math.min(32, maxX - ChunkUtil.minBlock(cx));
+                    int endZ = Math.min(32, maxZ - ChunkUtil.minBlock(cz));
+                    WorldChunk chunk = world.getNonTickingChunk(ChunkUtil.indexChunk(cx, cz));
 
-            blockSelection.setSelectionArea(startPosition, endPosition);
-            BuilderToolsPlugin.getState(player, playerRef).setSelection(blockSelection);
-            assert player.getReference() != null;
-            BuilderToolsPlugin.getState(player, playerRef).replace(player.getReference(), fromReplaceMaterial, toReplaceMateriel, store);
-        }
+                    if(chunk == null || chunk.getBlockChunk() == null) {
+                        continue;
+                    }
+
+                    for(int z = startZ; z < endZ; ++z) {
+                        for(int x = startX; x < endX; ++x) {
+                            chunk.getBlockChunk().setTint(x, z, Integer.parseInt(nextTint, 16));
+                        }
+                    }
+
+                    world.getNotificationHandler().updateChunk(chunk.getIndex());
+                }
+            }
+        });
     }
 }
