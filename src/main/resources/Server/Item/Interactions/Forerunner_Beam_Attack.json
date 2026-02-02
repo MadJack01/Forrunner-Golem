@@ -1,7 +1,7 @@
 {
   "Type": "Simple",
   "$Comment": "Prepare Delay",
-  "RunTime": 0.78,
+  "RunTime": 1.1,
   "Next": {
     "Type": "Parallel",
     "$Comment": "Make sure this parallel interaction is needed and can't be optimized away",
@@ -11,7 +11,7 @@
           {
             "Type": "Selector",
             "$Comment": "Length of Combat",
-            "RunTime": 0.217,
+            "RunTime": 0.01,
             "Selector": {
               "Id": "Stab",
               "EndDistance": 20,
@@ -36,7 +36,7 @@
             "Next": {
               "Type": "Simple",
               "$Comment": "Pad the interaction length",
-              "RunTime": 0.55
+              "RunTime": 0
             }
           }
         ]
@@ -46,35 +46,40 @@
           {
             "Type": "Simple",
             "$Comment": "Length of Effect",
-            "RunTime": 0.183,
-            "Effects": {
-              "WorldSoundEventId": "SFX_Sword_T2_Signature_Part_2",
-              "LocalSoundEventId": "SFX_Sword_T2_Signature_Part_2_Local"
-            }
+            "RunTime": 0,
+            "Effects": {}
           }
         ]
       }
     ],
-    "Effects": {
-      "Particles": [
-        {
-          "SystemId": "Forerunner_Golem_Beam_Effect",
-          "TargetEntityPart": "Entity",
-          "RotationOffset": {
-            "Yaw": 90
-          },
-          "PositionOffset": {
-            "Y": 1
-          }
-        }
-      ]
-    }
+    "RunTime": 0
   },
   "Effects": {
+    "MovementEffects": {
+      "DisableAll": true,
+      "DisableForward": false,
+      "DisableBackward": false,
+      "DisableSprint": false,
+      "DisableLeft": false,
+      "DisableRight": false
+    },
     "ItemPlayerAnimationsId": "Forerunner_Golem_Default",
     "ItemAnimationId": "ShootBeam",
-    "MovementEffects": {
-      "DisableAll": true
-    }
+    "ClearAnimationOnFinish": false,
+    "WaitForAnimationToFinish": false,
+    "Particles": [
+      {
+        "SystemId": "Forerunner_Golem_Beam_Effect",
+        "TargetEntityPart": "Entity",
+        "RotationOffset": {
+          "Yaw": 90
+        },
+        "PositionOffset": {
+          "Y": 1
+        }
+      }
+    ],
+    "WorldSoundEventId": "SFX_Beam_Sound",
+    "LocalSoundEventId": "SFX_Beam_Sound_Local"
   }
 }

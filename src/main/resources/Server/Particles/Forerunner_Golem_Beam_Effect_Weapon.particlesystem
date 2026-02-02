@@ -25,8 +25,7 @@
         "X": {
           "Min": 0
         }
-      },
-      "StartDelay": 1.03
+      }
     },
     {
       "SpawnerId": "Forerunner_Beam_Constant_Flat",
@@ -40,19 +39,17 @@
         "Pitch": 90,
         "Roll": 0,
         "Yaw": 90
-      },
-      "StartDelay": 1.03
+      }
     },
     {
       "SpawnerId": "Forerunner_Beam_Constant",
       "PositionOffset": {
         "X": -5
-      },
-      "StartDelay": 1.03
+      }
     }
   ],
   "BoundingRadius": 100.0,
   "CullDistance": 100.0,
   "IsImportant": true,
-  "LifeSpan": 1.07
+  "LifeSpan": 0.1
 }

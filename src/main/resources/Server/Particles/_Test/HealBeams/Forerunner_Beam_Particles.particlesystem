@@ -1,0 +1,10 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "Forerunner_Beam_Particles_Template",
+      "FixedRotation": false
+    }
+  ],
+  "CullDistance": 125,
+  "IsImportant": true
+}

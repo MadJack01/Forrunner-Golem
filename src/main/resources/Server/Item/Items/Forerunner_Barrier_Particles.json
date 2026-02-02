@@ -7,17 +7,17 @@
     "Furniture.Lighting"
   ],
   "Set": "Furniture_Crude",
-  "Icon": "Icons/ItemsGenerated/Furniture_Royal_Magic_Potion_Glow.png",
+  "Icon": "Icons/ItemsGenerated/Forerunner_Barrier_Particles.png",
   "IconProperties": {
-    "Scale": 0.5,
+    "Scale": 0.2,
     "Rotation": [
       22.5,
       45,
       22.5
     ],
     "Translation": [
-      -1,
-      -23
+      0,
+      -13.5
     ]
   },
   "InteractionConfig": {
@@ -32,33 +32,12 @@
     "Primary": "Root_Unarmed_Attack_Swing_Left",
     "Secondary": "Block_Secondary"
   },
-  "Recipe": {
-    "Input": [
-      {
-        "ResourceTypeId": "Wood_Trunk",
-        "Quantity": 1
-      },
-      {
-        "ItemId": "Ingredient_Tree_Sap",
-        "Quantity": 1
-      }
-    ],
-    "OutputQuantity": 1
-  },
   "BlockType": {
     "PlacementSettings": {
       "CeilingPlacementOverrideBlockId": "Furniture_Royal_Magic_Potion_Glow_Ceiling"
     },
-    "BlockParticleSetId": "GlassMagic",
     "BlockSoundSetId": "Metal",
-    "CustomModel": "Blocks/Decorative_Sets/Royal_Magic/Potion_Glow.blockymodel",
     "CustomModelScale": 0.7,
-    "CustomModelTexture": [
-      {
-        "Texture": "Blocks/Decorative_Sets/Royal_Magic/Potion_Glow_Texture.png",
-        "Weight": 1
-      }
-    ],
     "DrawType": "Model",
     "Flags": {},
     "Gathering": {
@@ -67,10 +46,6 @@
       }
     },
     "HitboxType": "Torch_Small",
-    "Light": {
-      "Color": "#eb9",
-      "Radius": 0
-    },
     "Opacity": "Transparent",
     "RandomRotation": "YawStep1",
     "Support": {
@@ -116,17 +91,6 @@
     },
     "Looping": true,
     "Material": "Solid",
-    "Particles": [
-      {
-        "SystemId": "Forerunner_Golem_AOE_Effect",
-        "TargetNodeName": "Glow",
-        "Scale": 1,
-        "DetachedFromModel": false,
-        "PositionOffset": {
-          "Y": 0
-        }
-      }
-    ],
     "Interactions": {
       "Use": {
         "Interactions": [
@@ -155,16 +119,27 @@
       }
     },
     "InteractionHint": "server.interactionHints.turnoff",
-    "AmbientSoundEventId": "SFX_Campfire_Default_Loop"
+    "AmbientSoundEventId": "SFX_Campfire_Default_Loop",
+    "Particles": [
+      {
+        "SystemId": "Forerunner_Beam_Particles",
+        "TargetEntityPart": "Entity",
+        "Color": "#00e4ff",
+        "Scale": 5,
+        "PositionOffset": {
+          "Z": 0
+        },
+        "RotationOffset": {
+          "Pitch": 90
+        }
+      }
+    ],
+    "CustomModelTexture": [
+      {
+        "Texture": "Blocks/_Debug/TextureEmpty.png"
+      }
+    ]
   },
-  "ResourceTypes": [
-    {
-      "Id": "Fuel"
-    },
-    {
-      "Id": "Charcoal"
-    }
-  ],
   "Tags": {
     "Type": [
       "Furniture"
@@ -172,9 +147,6 @@
     "Family": [
       "Crude"
     ]
-  },
-  "Utility": {
-    "Usable": true
   },
   "Scale": 1.5,
   "ItemSoundSetId": "ISS_Blocks_Wood"

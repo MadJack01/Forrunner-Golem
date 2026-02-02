@@ -2,7 +2,7 @@
   "Type": "Variant",
   "Reference": "Spider",
   "Modify": {
-    "Appearance": "Forerunner_Spider",
+    "Appearance": "Forerunner_Spider3",
     "DropList": "",
     "MaxHealth": 150,
     "BlockStepDetectionBlockSet": "Web",

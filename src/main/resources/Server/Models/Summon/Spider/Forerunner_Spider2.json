@@ -1,7 +1,7 @@
 {
   "Parent": "Spider",
   "Model": "NPC/Summon/Forerunner_Spider/Forerunner_Spider_Model.blockymodel",
-  "Texture": "NPC/Summon/Forerunner_Spider/Forerunner_Spider1.png",
+  "Texture": "NPC/Summon/Forerunner_Spider/Forerunner_Spider2.png",
   "MinScale": 1.5,
   "MaxScale": 1.5,
   "EyeHeight": 0.6,

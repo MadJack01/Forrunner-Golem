@@ -1,0 +1,13 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "Forerunner_Golem_Orb_Glow_Yellow",
+      "PositionOffset": {
+        "Z": 0.09,
+        "Y": 0.18
+      },
+      "FixedRotation": false
+    }
+  ],
+  "CullDistance": 100.0
+}

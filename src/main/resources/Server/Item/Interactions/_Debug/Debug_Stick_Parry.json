@@ -1,0 +1,65 @@
+{
+  "Type": "Wielding",
+  "Effects": {
+    "ItemAnimationId": "Guard",
+    "ClearAnimationOnFinish": true,
+    "Particles": [
+      {
+        "SystemId": "OneH_Stick_Parry_Active2"
+      }
+    ],
+    "ItemPlayerAnimationsId": "Sword"
+  },
+  "RunTime": 5,
+  "FailOnDamage": true,
+  "DamageModifiers": {
+    "Physical": 0
+  },
+  "BlockedInteractions": {
+    "Interactions": [
+      {
+        "Type": "Parallel",
+        "Interactions": [
+          {
+            "Interactions": [
+              {
+                "Type": "ApplyForce",
+                "WaitForGround": false,
+                "Forces": [
+                  {
+                    "Direction": {
+                      "X": 0,
+                      "Y": 0,
+                      "Z": -1
+                    },
+                    "Force": 10
+                  }
+                ],
+                "VelocityConfig": {
+                  "AirResistance": 0.93,
+                  "GroundResistance": 0.93
+                }
+              },
+              {
+                "Type": "Simple",
+                "RunTime": 0.1
+              }
+            ]
+          },
+          {
+            "Interactions": [
+              "Stick_Attack"
+            ]
+          }
+        ]
+      },
+      {
+        "Type": "ResetCooldown",
+        "Cooldown": {
+          "Id": "Debug_Stick_Parry",
+          "Cooldown": 0.5
+        }
+      }
+    ]
+  }
+}

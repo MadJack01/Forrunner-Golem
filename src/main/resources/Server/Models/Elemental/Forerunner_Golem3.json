@@ -270,13 +270,42 @@
   },
   "Particles": [
     {
+      "SystemId": "Forerunner_Hands_Effect",
+      "TargetNodeName": "Chest"
+    },
+    {
       "SystemId": "Forerunner_Golem_Heart_Glow",
       "TargetNodeName": "Chest",
       "TargetEntityPart": "Self",
-      "Scale": 1,
-      "PositionOffset": {
-        "Z": 0
-      }
+      "Scale": 1
+    },
+    {
+      "SystemId": "Forerunner_Hands_Effect",
+      "TargetNodeName": "L-Hand"
+    },
+    {
+      "SystemId": "Forerunner_Hands_Effect",
+      "TargetNodeName": "R-Hand"
+    },
+    {
+      "SystemId": "Forerunner_Hands_Effect",
+      "TargetNodeName": "L-Leg"
+    },
+    {
+      "SystemId": "Forerunner_Hands_Effect",
+      "TargetNodeName": "R-Leg"
+    },
+    {
+      "SystemId": "Forerunner_Hands_Effect",
+      "TargetNodeName": "Chest"
+    },
+    {
+      "SystemId": "Forerunner_Hands_Effect",
+      "TargetNodeName": "R-Arm2"
+    },
+    {
+      "SystemId": "Forerunner_Hands_Effect",
+      "TargetNodeName": "L-Arm2"
     }
   ],
   "Light": {

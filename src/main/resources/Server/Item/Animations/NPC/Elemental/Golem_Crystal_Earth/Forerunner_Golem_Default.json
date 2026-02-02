@@ -21,8 +21,8 @@
       "ThirdPersonMoving": "NPC/Boss/Forerunner Golem/Animations/Swing_Left.blockyanim"
     },
     "ShootBeam": {
-      "ThirdPerson": "NPC/Boss/Forerunner Golem/Animations/Shoot_Beam.blockyanim",
-      "ThirdPersonMoving": "NPC/Boss/Forerunner Golem/Animations/Shoot_Beam.blockyanim"
+      "ThirdPerson": "NPC/Boss/Forerunner Golem/Animations/Beam_Turret_ Shot.blockyanim",
+      "ThirdPersonMoving": "NPC/Boss/Forerunner Golem/Animations/Beam_Turret_ Shot.blockyanim"
     }
   },
   "Camera": {

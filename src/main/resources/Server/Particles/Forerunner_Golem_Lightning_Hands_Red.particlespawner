@@ -4,24 +4,28 @@
   "LinearFiltering": true,
   "LightInfluence": 0,
   "ParticleLifeSpan": {
-    "Min": 0.8,
-    "Max": 0.9
+    "Min": 0.25,
+    "Max": 0.3333333333333333
   },
   "ParticleRotateWithSpawner": false,
   "TrailSpawnerPositionMultiplier": 0,
-  "TrailSpawnerRotationMultiplier": 0,
+  "TrailSpawnerRotationMultiplier": 1,
   "WaveDelay": {
     "Min": 0,
     "Max": 0
   },
-  "MaxConcurrentParticles": 300,
+  "MaxConcurrentParticles": 1,
   "SpawnRate": {
-    "Min": 700,
-    "Max": 700
+    "Min": 10,
+    "Max": 10
+  },
+  "TotalParticles": {
+    "Min": -1,
+    "Max": -1
   },
   "Attractors": [
     {
-      "RadialImpulse": 5,
+      "RadialImpulse": 0,
       "DampingMultiplier": {
         "X": 0.5314410000000002,
         "Y": 0.5314410000000002,
@@ -35,14 +39,11 @@
         "Y": 0
       },
       "LinearImpulse": {
-        "Y": 0,
-        "X": 0,
-        "Z": 0
+        "Y": 0
       },
       "LinearAcceleration": {
         "Y": 0,
-        "X": 0,
-        "Z": 0
+        "X": 0
       },
       "TrailPositionMultiplier": 0
     }
@@ -62,16 +63,6 @@
         "FrameIndex": {
           "Min": 0,
           "Max": 3
-        },
-        "Scale": {
-          "X": {
-            "Min": 0.4,
-            "Max": 0.4
-          },
-          "Y": {
-            "Min": 0.4,
-            "Max": 0.4
-          }
         },
         "Rotation": {
           "X": {
@@ -112,8 +103,12 @@
       },
       "Scale": {
         "X": {
-          "Min": 3,
-          "Max": 3
+          "Min": 0.1,
+          "Max": 0.1
+        },
+        "Y": {
+          "Min": 0.1,
+          "Max": 0.1
         }
       }
     },
@@ -132,20 +127,6 @@
     },
     "Z": {
       "Min": 0
-    }
-  },
-  "InitialVelocity": {
-    "Yaw": {
-      "Min": 1,
-      "Max": 1
-    },
-    "Pitch": {
-      "Min": 1,
-      "Max": 1
-    },
-    "Speed": {
-      "Min": 10,
-      "Max": 50
     }
   }
 }

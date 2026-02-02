@@ -34,7 +34,7 @@ public class TriggerPhasedHandler implements Consumer<TriggerPhasedEvent> {
 
         assert world != null;
         this.switchWeather(event.nextPhase(), world, store);
-        this.replaceBlock(event.nextPhase(), event.npcRef(), world, store);
+       // this.replaceBlock(event.nextPhase(), event.npcRef(), world, store);
     }
 
     private void switchWeather(String nextPhase, World world, @Nonnull Store<EntityStore> store) {

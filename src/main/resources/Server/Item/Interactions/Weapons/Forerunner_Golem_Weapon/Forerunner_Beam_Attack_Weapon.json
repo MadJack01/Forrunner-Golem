@@ -50,11 +50,6 @@
             "RunTime": 0.183,
             "Effects": {
               "WorldSoundEventId": "SFX_Sword_T2_Signature_Part_2",
-              "Particles": [
-                {
-                  "SystemId": "Flamethrower_Effect"
-                }
-              ],
               "LocalSoundEventId": "SFX_Sword_T2_Signature_Part_2_Local"
             }
           }
@@ -64,7 +59,7 @@
     "Effects": {
       "Particles": [
         {
-          "SystemId": "Forerunner_Golem_Beam_Effect",
+          "SystemId": "Forerunner_Golem_Beam_Effect_Weapon",
           "TargetEntityPart": "Entity",
           "RotationOffset": {
             "Yaw": 90
