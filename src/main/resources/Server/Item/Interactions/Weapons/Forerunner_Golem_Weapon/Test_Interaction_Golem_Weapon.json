@@ -34,7 +34,7 @@
     "DefaultOk": true,
     "DefaultValue": {
       "Interactions": [
-        "Forerunner_Golem_Jump_Smash"
+        "Forerunner_Weapon_Jump_Smash"
       ]
     }
   },
