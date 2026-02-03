@@ -5,11 +5,16 @@ import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.math.util.ChunkUtil;
 import com.hypixel.hytale.math.vector.Vector3i;
+import com.hypixel.hytale.protocol.packets.interface_.NotificationStyle;
+import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.modules.entity.component.TransformComponent;
+import com.hypixel.hytale.server.core.universe.PlayerRef;
+import com.hypixel.hytale.server.core.universe.Universe;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.WorldConfig;
 import com.hypixel.hytale.server.core.universe.world.chunk.WorldChunk;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
+import com.hypixel.hytale.server.core.util.NotificationUtil;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
 import com.light06.plugin.TheForerunner.Events.TriggerPhasedEvent;
 
@@ -64,9 +69,21 @@ public class TriggerPhasedHandler implements Consumer<TriggerPhasedEvent> {
             String nextTint = "51ff00";
 
             if(nextPhase.equals("Forerunner_Golem2")) {
-                nextTint = "Ff8a00";
+                nextTint = "e8ee0d";
+                for (PlayerRef pRef : Universe.get().getPlayers()) {
+                    NotificationUtil.sendNotification(
+                            pRef.getPacketHandler(),
+                            Message.raw("Virus Database Has Been Updated !"),
+                            NotificationStyle.Danger);
+                }
             } else if (nextPhase.equals("Forerunner_Golem3")) {
                 nextTint = "ff0000";
+                for (PlayerRef pRef : Universe.get().getPlayers()) {
+                    NotificationUtil.sendNotification(
+                            pRef.getPacketHandler(),
+                            Message.raw("Your Firewall has been breached !"),
+                            NotificationStyle.Danger);
+                }
             }
 
             Vector3i min = Vector3i.min(startPosition, endPosition);
