@@ -24,13 +24,10 @@ public class TheForerunnerPlugin extends JavaPlugin {
 
         this.getEventRegistry().registerGlobal(AddPlayerToWorldEvent.class, AddPlayerFromWorldEventListener::on);
         this.getEventRegistry().registerGlobal(TriggerPhasedEvent.class, new TriggerPhasedHandler());
-
-        this.getEventRegistry().register(PluginSetupEvent.class, NPCPlugin.class, pluginSetupEvent -> {
-            NPCPlugin.get().registerCoreComponentType("DispatchEventPhase", BuilderActionDispatchEventPhase::new);
-        });
     }
 
     @Override
     protected void start() {
+        NPCPlugin.get().registerCoreComponentType("DispatchEventPhase", BuilderActionDispatchEventPhase::new);
     }
 }
